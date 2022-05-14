@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Remove border from toggler */
+.navbar-toggler {
+    border: 0 !important;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon{
+    width: 35px;
+    height: 1px;
+    background-color: white;
+    display: block;
+    transition: all 0.3s;
+}
+
+/* Adds Space between the lines */
+.middle-bar{
+    margin: 7px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(-45deg) translate(-6px,7px);
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(45deg) translate(-4px,-5px);
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: white;
+}
+
+.navbar-expand-lg.navbar-nav.nav-link {
+    padding: 0;
+    margin-left: 1.5rem;
+}
+
+.navbar-toggler {
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: box-shadow .15s ease-in-out;
+}
+
+.bg-dark {
+    background-color: black !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+@media screen and (max-width: 575px){
+    .navbar.navbar-expand-lg{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .navbar-toggler.collapsed{
+        margin-right: 12px;
+    }
+
+    .container-fluid.back-img{
+        background-position: right !important;
+    }
+
+    .navbar.navbar-expand-lg{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .container.hero-text{
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .txt{
+        margin-top: 30px;
+    }
+
+    .container.hero-text{
+        padding-top: 65% !important;
+    }
+
+    .container.hero-text h1{
+        font-size: 50px !important;
+    }
+
+    .container.company-about p{
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .container.company-about h1{
+        padding-left: 12px !important;
+    }
+
+    .container.company-about h2{
+        padding-left: 12px !important;
+    }
+
+    .container.company-about h3{
+        padding-left: 12px !important;
+    }
+
+    .btn.btn-ser{
+        margin-left: 12px !important;
+    }
+
+    .team-about img{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .nav-link.contxt{
+        padding-right: 0 !important;
+    }
+
+    .img.image1{
+        padding-top: 40px;
+    }
+
+    .img{
+        padding-left: 12px;
+    }
+}
+
+/* Home Section Starts*/
+.container-fluid.back-img {
+    background-image: url(images/home.jpg);
+    background-size: cover;
+    background-position: right !important;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.container.hero-text{
+    text-align: center;
+    color: white;
+}
+
+.container.hero-text h1{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.container.hero-text p{
+    font-size: 25px;
+}
+
+.btn{
+    border-radius: none !important;
+    background-color: #111;
+    box-shadow: none !important;
+    color: white;
+    padding: 15px;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+/* Home Section Ends*/
+
+.text-center{
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.card{
+    border-radius: 0;
+}
+
+/* Preview Starts */
+.gallery .image img{
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 7%;
+    vertical-align: middle;
+    transition: 1s;
+}
+
+.preview-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: black;
+    max-width: 700px;
+    width: 100%;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    padding: 0 5px 5px 5px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.preview-box.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease;
+}
+
+.preview-box .details{
+    display: flex;
+    align-items: center;
+    padding: 12px 15px 12px 10px;
+    justify-content: space-between;
+}
+
+.preview-box .details .title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+
+.details .title p{
+    margin: 0 5px;
+}
+
+.details .title p.current-img{
+    font-weight: 500;
+}
+
+.details .icon{
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.preview-box .image-box{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.image-box .slide{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    height: 50px;
+    width: 60px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.slide.prev{
+    left: 0px;
+}
+
+.slide.next{
+    right: 0px;
+}
+
+.image-box img{
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+}
+/* Preview Ends */
+
+.container-fluid.port-folio{
+    padding-bottom: 30px;
+}
+
+/* Brand Carousel */
+
+.contact-form button{
+    background-color: #111;
+    box-shadow: none !important;
+    color: white;
+}
+
+.contact-form button:hover{
+    background-color: black;
+    color: white;
+}
+
+.contact-form input{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.contact-form textarea{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.slick-slide {
+    margin: 0px 50px;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+}
+
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+
+@media screen and (max-width: 575px){
+    .slider img{
+        width: 80px;
+    }
+
+    .slick-slide {
+        margin: 0px 20px;
+    }
+
+    .personal-info{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
+    .footer-text{
+        font-size: 12px !important;
+    }
+
+    .last-card{
+        padding-bottom: 50px !important;
+    }
+}
